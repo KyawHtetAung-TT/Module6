@@ -7,16 +7,17 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-    }
+    
 
 
-}
+
 
 
 // Creating an Array
@@ -32,3 +33,41 @@ let sampleStirng5 : Any = ["value","value2",true]
 
 sampleStirng.isEmpty
 
+// Accessing Elements subscript, first, last
+
+sampleStirng4[0] // value1
+sampleStirng4[1] // vlaue2
+sampleStirng4[99] // Runtime Error - Index out of range
+sampleStirng4.first
+sampleStirng4.last
+
+// Adding Element subscript, append, insert
+
+sampleStirng4.append("value3")  // ["value1","value2", "value3 "]
+
+var iphones = [String]()
+iphones.append("XS Max")
+print(iphones)  // ["XS Max"]
+iphones.append("XS Max Pro")
+print(iphones)  // ["XS Max","XS Max Pro"]
+iphones.append("Iphone 12 pro")
+print(iphones)  // ["XS Max","XS Max Pro","Iphone 12 pro"]
+
+iphones.insert("Iphone SE", at: 2)
+print(iphones)  // ["XS Max","XS Max Pro","Iphone SE","Iphone 12 pro"]
+
+
+// Combing Array +, +=, append
+
+
+        
+        
+        
+        
+        
+
+        
+
+    }
+    
+}
