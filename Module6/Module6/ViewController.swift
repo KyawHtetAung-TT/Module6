@@ -88,9 +88,30 @@ class ViewController: UIViewController {
         // Finding Element - contains
         let ipodshuffle = appleDevice.contains("ipod shuffle")
         print(ipodshuffle) // false
-        d
         
-
+        // Reordering array elements - sort(), reverse, shuffle
+        
+        
+        let rubbish : [[Any]] = [[2,true,"5"], [1,["a","%", 3]], ["4", 4.0, false]]
+        var numberOnly = [Int]()
+        
+        /**
+         
+         1). You are not allowed to create a new array.
+         2). Print ( number only ) should be => [1,2,3,4,5]
+         
+         Hint
+         1). to get sub array - one can use [] after [] for example, [0][1] - index 1 of index 0 of an array
+         2). use forced type casting to convert type
+         
+         for example.
+         let unknown  : Any = "80"
+         print(unknown as! Int) //80
+         print(unknown as! String) //"80"
+         
+         Note - (Optional) : feel free to use optional/ non-optional/ unwrapping/ wrapping, if you already know how.
+         
+         **/
                 
 
             }
