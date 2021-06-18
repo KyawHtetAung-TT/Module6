@@ -124,8 +124,15 @@ class ViewController: UIViewController {
         print(numberOnly.sorted())
         
         
+        // Creating a Set - not ordered , [1,2,3,4,5]
         
+        let numberSet : Set<String> = ["1","2","3"]
+        let numberSet2 = ["1","2","3"] // array<String> or [String]
         
+        var numberSet1 : Set<String>
+        numberSet1.insert("4")
+        
+        // Accessing Elements
         
         
         
