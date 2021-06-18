@@ -153,8 +153,28 @@ class ViewController: UIViewController {
         let firstQuarter : Set<String> = ["jan","feb","march"]
         let SecondQuarter : Set<String> = ["april","may","june","march"]
         
-        firstQuarter.union(SecondQuarter) // ["jan","feb","march","april","may","june"] 
+        var halfyear = firstQuarter.union(SecondQuarter) // ["jan","feb","march","april","may","june"]
                                                 // order can't be the same
+        
+        // removing Element - remove
+        
+        halfyear.remove("jan")
+        halfyear.remove(at: <#T##Set<String>.Index#>)
+        halfyear.first
+        
+        // finding Element - contain
+        
+        halfyear.contains("feb")
+        
+        // Sort Element - sorted
+        
+        halfyear.sorted()
+        
+        
+        
+        
+        
+        
         
         
         
