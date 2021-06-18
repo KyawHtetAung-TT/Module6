@@ -9,7 +9,8 @@ import UIKit
 
 
 class ViewController: UIViewController {
-
+    
+    / <#Description#>
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -176,12 +177,48 @@ class ViewController: UIViewController {
         
         var sampleDictionary : Dictionary<String, String> = Dictionary<String, String>()
         
-        var sampleDictionary2 : [String:String] = ["key":"value","key1":"value"]
+        var sampleDictionary2 : [String:String] = ["key":"value","key1":"value1"]
         
         
         // empty Dictionary
         
         var emptyDictionary : [String : String] = [:]
+        
+        
+        // Accessing Element
+        
+        print(sampleDictionary2["key"]) //"value"
+//        sampleDictionary2.keys  // ["key","key1"]
+//        sampleDictionary2.values  //["value","value1"]
+        
+        for (key, values) in sampleDictionary2{
+         
+            print("\(key): \(values)")
+        }
+        
+        
+        var mgmg : [String : String] = [
+            "name" : "mgmg"
+            "age" : "23"
+            "gender" : "male"
+            "location" : "yangon"
+        
+        ]
+        
+        
+        // Adding element insert
+       
+        mgmg["phone"] = "+951234567"
+        
+        print(mgmg)
+        
+        // update  Element
+        
+        mgmg["phone"] = "no phone number"
+        
+        
+        
+        
         
         
         
