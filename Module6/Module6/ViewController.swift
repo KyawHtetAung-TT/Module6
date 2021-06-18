@@ -113,7 +113,29 @@ class ViewController: UIViewController {
          
          **/
                 
+        numberOnly.append(rubbish[0][0] as! Int)
+        numberOnly.append(Int(rubbish[0][2] as! String) ?? 0 )
 
+        numberOnly.append(rubbish[1][0] as! Int)
+        numberOnly.append((rubbish[1][1] as! [Any]) [2] as! Int)
+        
+        numberOnly.append(Int(rubbish[2][0] as! String) ?? 0)
+        
+        print(numberOnly.sorted())
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
             }
             
         }
