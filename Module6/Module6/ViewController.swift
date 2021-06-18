@@ -172,6 +172,21 @@ class ViewController: UIViewController {
         
         
         
+        // Creating a dictionary - unordered, unique
+        
+        var sampleDictionary : Dictionary<String, String> = Dictionary<String, String>()
+        
+        var sampleDictionary2 : [String:String] = ["key":"value","key1":"value"]
+        
+        
+        // empty Dictionary
+        
+        var emptyDictionary : [String : String] = [:]
+        
+        
+        
+        
+        
         
         
         
