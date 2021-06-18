@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 
         // Adding Element subscript, append, insert
 
-        sampleStirng4.append("value3")  // ["value1","value2", "value3 "]
+//        sampleStirng4.append("value3")  // ["value1","value2", "value3 "]
 
         var iphones = [String]()
         iphones.append("XS Max")
@@ -129,17 +129,32 @@ class ViewController: UIViewController {
         let numberSet : Set<String> = ["1","2","3"]
         let numberSet2 = ["1","2","3"] // array<String> or [String]
         
-        var numberSet1 : Set<String>
-        numberSet1.insert("4")
+        var numberSet3 = Set<String>()
+        numberSet3.insert("4")
         
         // Accessing Elements
         
+        //[1,2,3,4,5] - [0] => 1 | [1] => 2      array
+        //[1,2,3,4,5] - [0] => 3 | [1] => 1      set data
+        
+        numberSet3.first
+        
+        for data in numberSet {
+            print(data)
+        }
+        
+        // adding element insert
+        
+        // [0] = 100 , insert(at: position , data :  )
         
         
+        // Combing Sets - interaction, union, substracting, symmetice
         
+        let firstQuarter : Set<String> = ["jan","feb","march"]
+        let SecondQuarter : Set<String> = ["april","may","june","march"]
         
-        
-        
+        firstQuarter.union(SecondQuarter) // ["jan","feb","march","april","may","june"] 
+                                                // order can't be the same
         
         
         
