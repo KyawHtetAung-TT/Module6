@@ -351,11 +351,59 @@ class ViewController: UIViewController {
         
         
         
-        // Define properties - var / let , DataType  & Optional , Type Inference
-        
-        
+        //Define properties - var / let , DataType  & Optional , Type Inference
         
         //Define properties - parameters Name and argument labels
+
+        //Initializing objects - default init, customized init, multiple init...
+        
+        
+        
+        //Type of initialzer - default & designated & convenience & failure , required etc ...
+        
+        typealias Gram = Int
+        
+        class Coffee : Drink{
+            
+            var espresso : Gram
+            var milkform : Gram
+            var steamedmilk : Gram
+            var hotchocolate : Gram
+            
+            init(espresso : Gram, milkform : Gram, steamedmilk : Gram, hotchocolate : Gram) {
+                self.espresso = espresso
+                self.milkform = milkform
+                self.steamedmilk = steamedmilk
+                self.hotchocolate = hotchocolate
+                
+                super.init(taste: "bitter", isColdDrink: false, Bartender())
+                
+            }
+            
+//            init(value : Gram) {
+//                self.espresso = value
+//                self.milkform = 0
+//                self.steamedmilk = value
+//                self.hotchocolate = 0
+//
+//                super.init(taste: "bitter", isColdDrink: false, Bartender())
+//            }
+            
+            
+            convenience init(amount : Gram){
+                self.init(espresso : amount, milkform : 0, steamedmilk : amount, hotchocolate : 0)
+            }
+            
+            
+        }
+        
+        let cappucino = Coffee(espresso: 100, milkform: 100, steamedmilk: 100, hotchocolate: 0)
+        
+        let quickCoffee = Coffee(amount: 100)
+        
+        
+        
+        
         
         
         
