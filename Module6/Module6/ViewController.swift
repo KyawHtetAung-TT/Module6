@@ -246,6 +246,58 @@ class ViewController: UIViewController {
         
         
         
+        // How to create a class
+        
+            
+        class SomeCalssName{
+            
+            // properties
+            
+            var variableName = "mgmg"
+            
+            // function
+            
+            
+            
+        }
+        let someObject = SomeCalssName()
+
+              
+       
+        class Drink{
+            
+            var taste : String = ""
+            var isColdDrink : Bool = true
+            
+            init(taste : String) {
+                self.taste = taste
+            }
+            
+            init(isColdDrink : Bool) {
+                self.isColdDrink = isColdDrink
+            }
+            
+            // can also add undeclared in class
+            
+            init(tast:String,isColdDrink:Bool,someParameter:String){
+                
+                
+            }
+            
+        }
+        
+        let limeJuice = Drink(taste: "sour")
+        print(limeJuice.taste) // "sour"
+        print(limeJuice.isColdDrink) // true
+        
+        
+        let limeJuice1 = Drink(isColdDrink: false)
+        print(limeJuice1.taste) // ""
+        print(limeJuice1.isColdDrink) // false
+        
+        
+        
+        
         
         
         
