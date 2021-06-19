@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    / <#Description#>
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 
         sampleStirng4[0] // value1
         sampleStirng4[1] // vlaue2
-        sampleStirng4[99] // Runtime Error - Index out of range
+//        sampleStirng4[99] // Runtime Error - Index out of range
         sampleStirng4.first
         sampleStirng4.last
 
@@ -160,7 +160,7 @@ class ViewController: UIViewController {
         // removing Element - remove
         
         halfyear.remove("jan")
-        halfyear.remove(at: <#T##Set<String>.Index#>)
+//        halfyear.remove(at: <#T##Set<String>.Index#>)
         halfyear.first
         
         // finding Element - contain
@@ -198,9 +198,9 @@ class ViewController: UIViewController {
         
         
         var mgmg : [String : String] = [
-            "name" : "mgmg"
-            "age" : "23"
-            "gender" : "male"
+            "name" : "mgmg",
+            "age" : "23",
+            "gender" : "male",
             "location" : "yangon"
         
         ]
@@ -216,12 +216,32 @@ class ViewController: UIViewController {
         
         mgmg["phone"] = "no phone number"
         
+        //combing Dictionary
+        
+        var mgmgPassport : [String:String] = [
+        
+            "name" : " Su Myat Aung",
+            "age" : "23",
+            "gender" : "female",
+            "blood type" : "B"
+        
+        ]
+        
+        mgmg.merge(mgmgPassport) { (current, new) -> String in
+            return new
+        }
+        
+        print(mgmg)
         
         
+        // remove element - remove
+        
+        mgmg.remove(at: mgmg.index(forKey: "name")!)
+        mgmg.removeAll()
         
         
-        
-        
+        // finding element - contain
+//        mgmg.contains(where: <#T##((key: String, value: String)) throws -> Bool#>)
         
         
         
