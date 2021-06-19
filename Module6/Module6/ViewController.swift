@@ -309,22 +309,53 @@ class ViewController: UIViewController {
 //        print(limejuice.isColdDrink) // nil
         
         
+//        class Drink{
+//
+//            var taste : String
+//            var isColdDrink : Bool
+//
+//            init(taste : String, isColdDrink:Bool) {
+//                self.taste = taste
+//                self.isColdDrink = isColdDrink
+//            }
+//        }
+//
+//        let limejuice = Drink(taste: "sour", isColdDrink: true)
+//        print(limejuice.taste) // sour
+//        print(limejuice.isColdDrink) // true
+        
+        
+        
         class Drink{
             
             var taste : String
             var isColdDrink : Bool
+            var bartender : Bartender
             
-            init(taste : String, isColdDrink:Bool) {
+            init(taste : String, isColdDrink:Bool,_ bartender : Bartender) {
                 self.taste = taste
                 self.isColdDrink = isColdDrink
+                self.bartender = bartender
             }
         }
+            class Bartender{
+                var name : String = "mgmg"
+           
+        }
         
-        let limejuice = Drink(taste: "sour", isColdDrink: true)
+        let limejuice = Drink(taste: "sour", isColdDrink: true, Bartender() )
         print(limejuice.taste) // sour
         print(limejuice.isColdDrink) // true
         
+        self.present(UIViewController(), animated: true, completion: nil)
         
+        
+        
+        // Define properties - var / let , DataType  & Optional , Type Inference
+        
+        
+        
+        //Define properties - parameters Name and argument labels
         
         
         
