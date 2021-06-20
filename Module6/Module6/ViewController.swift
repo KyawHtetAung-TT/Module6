@@ -478,19 +478,56 @@ class ViewController: UIViewController {
             
             init?(someVariable2 : String) {
                 if someVariable2.isEmpty{ return nil}
-                self.someVariable2 = someVariable2
+                self.someVariable3 = someVariable2
+//
             }
             
+            
         }
-        
+       
 //        SomeName(someVariable2: <#T##String#>)  // failable inititlizer
 //        SomeName(someVariable3: <#T##String#>)
 //        SomeName(someVariable: <#T##String#>, someVariable2: <#T##String#>, someVariable3: <#T##String#>)
         
         
         // reference type & value type
+        // class - reference type | struct - value type
         
         
+    class FacebookAccount{
+            
+            var profileName : String = "mgmg"
+        }
+        
+        let phone = FacebookAccount()
+        let laptop = FacebookAccount()
+        let tablet = laptop
+        
+        print(phone.profileName) //  "mgmg"
+        tablet.profileName = "mgmg(padc)"
+        
+        print(laptop.profileName) //"mgmg"
+        print(phone.profileName)  //"mgmg(padc)"
+        print(tablet.profileName)  //"mgmg(padc)"
+        
+        
+        
+        
+    struct FacebookAccount1{
+            
+            var profileName : String = "mgmg"
+        }
+        
+        let phone1 = FacebookAccount1()
+        let laptop1 = FacebookAccount1()
+        let tablet1 = laptop
+        
+        print(phone1.profileName) //  "mgmg"
+        tablet.profileName = "mgmg(padc)"
+        
+        print(laptop1.profileName) //"mgmg"
+        print(phone1.profileName)  //"mgmg"
+        print(tablet1.profileName)  //"mgmg(padc)"
         
         
         
