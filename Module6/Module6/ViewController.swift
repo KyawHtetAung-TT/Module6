@@ -332,7 +332,7 @@ class ViewController: UIViewController {
             var isColdDrink : Bool
             var bartender : Bartender
             
-            init(taste : String, isColdDrink:Bool,_ bartender : Bartender) {
+           required init(taste : String, isColdDrink:Bool,_ bartender : Bartender) {
                 self.taste = taste
                 self.isColdDrink = isColdDrink
                 self.bartender = bartender
@@ -361,24 +361,24 @@ class ViewController: UIViewController {
         
         //Type of initialzer - default & designated & convenience & failure , required etc ...
         
-        typealias Gram = Int
-        
-        class Coffee : Drink{
-            
-            var espresso : Gram
-            var milkform : Gram
-            var steamedmilk : Gram
-            var hotchocolate : Gram
-            
-            init(espresso : Gram, milkform : Gram, steamedmilk : Gram, hotchocolate : Gram) {
-                self.espresso = espresso
-                self.milkform = milkform
-                self.steamedmilk = steamedmilk
-                self.hotchocolate = hotchocolate
-                
-                super.init(taste: "bitter", isColdDrink: false, Bartender())
-                
-            }
+//        typealias Gram = Int
+//
+//        class Coffee : Drink{
+//
+//            var espresso : Gram
+//            var milkform : Gram
+//            var steamedmilk : Gram
+//            var hotchocolate : Gram
+//
+//            init(espresso : Gram, milkform : Gram, steamedmilk : Gram, hotchocolate : Gram) {
+//                self.espresso = espresso
+//                self.milkform = milkform
+//                self.steamedmilk = steamedmilk
+//                self.hotchocolate = hotchocolate
+//
+//                super.init(taste: "bitter", isColdDrink: false, Bartender())
+//
+//            }
             
 //            init(value : Gram) {
 //                self.espresso = value
@@ -389,17 +389,86 @@ class ViewController: UIViewController {
 //                super.init(taste: "bitter", isColdDrink: false, Bartender())
 //            }
             
-            
-            convenience init(amount : Gram){
+//
+//            convenience init(amount : Gram){
+//                self.init(espresso : amount, milkform : 0, steamedmilk : amount, hotchocolate : 0)
+//            }
+//
+//
+//        }
+//
+//        let cappucino = Coffee(espresso: 100, milkform: 100, steamedmilk: 100, hotchocolate: 0)
+//        let quickCoffee = Coffee(amount: 100)
+        
+        
+        
+        // if espresso is essential in this process, ( failable initalizer )
+
+        typealias Gram = Int
+
+        class Coffee : Drink{
+
+            var espresso : Gram
+            var milkform : Gram
+            var steamedmilk : Gram
+            var hotchocolate : Gram
+
+            init?(espresso : Gram, milkform : Gram, steamedmilk : Gram, hotchocolate : Gram) {
+
+                if espresso == 0 { return nil}
+                self.espresso = espresso
+                self.milkform = milkform
+                self.steamedmilk = steamedmilk
+                self.hotchocolate = hotchocolate
+
+                super.init(taste: "bitter", isColdDrink: false, Bartender())
+
+            }
+
+            convenience init?(amount : Gram){
                 self.init(espresso : amount, milkform : 0, steamedmilk : amount, hotchocolate : 0)
             }
             
+            //        Required initializer
             
+            required init(taste abc: String, isColdDrink: Bool, _ bartender: Bartender) {
+                
+                self.espresso = 0
+                self.milkform = 0
+                self.steamedmilk = 0
+                self.hotchocolate = 0
+                super.init(taste: abc, isColdDrink: true, Bartender())
+                
+            }
+            
+            // Deinitialization
+            deinit {
+                print("coffee is thrown away")
+            }
+
         }
-        
+
         let cappucino = Coffee(espresso: 100, milkform: 100, steamedmilk: 100, hotchocolate: 0)
+        var quickCoffee = Coffee(amount: 100)
         
-        let quickCoffee = Coffee(amount: 100)
+        quickCoffee = nil
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
