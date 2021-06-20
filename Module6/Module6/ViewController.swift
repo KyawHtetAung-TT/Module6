@@ -359,11 +359,12 @@ class ViewController: UIViewController {
         
         
         
-        //Type of initialzer - default & designated & convenience & failure , required etc ...
+//Type of initialzer - default & designated & convenience & failable , required etc ...
         
-//        typealias Gram = Int
+        
+//           typealias Gram = Int
 //
-//        class Coffee : Drink{
+//           class Coffee : Drink{
 //
 //            var espresso : Gram
 //            var milkform : Gram
@@ -455,11 +456,49 @@ class ViewController: UIViewController {
         
         
        
+        // struct
+        
+        struct SomeName{
+            
+            var someVariable : String = "some Variable"
+            var someVariable2 : String?
+            var someVariable3 : String
+            
+            init(someVariable : String, someVariable2 : String, someVariable3 : String) {
+                self.someVariable = someVariable
+                self.someVariable2 = someVariable2
+                self.someVariable3 = someVariable2
+            }
+            
+            init(someVariable3 : String) {
+                self.someVariable3 = someVariable3
+            }
+            
+            // failable initializer
+            
+            init?(someVariable2 : String) {
+                if someVariable2.isEmpty{ return nil}
+                self.someVariable2 = someVariable2
+            }
+            
+        }
+        
+//        SomeName(someVariable2: <#T##String#>)  // failable inititlizer
+//        SomeName(someVariable3: <#T##String#>)
+//        SomeName(someVariable: <#T##String#>, someVariable2: <#T##String#>, someVariable3: <#T##String#>)
+        
+        
+        // reference type & value type
         
         
         
         
         
+        
+        
+        
+        
+        // Initializing Objects - memberwise init, customized init
         
         
         
