@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9810CFAC2680D6B2005B0CCF /* ViewControllerthree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9810CFAB2680D6B2005B0CCF /* ViewControllerthree.swift */; };
 		9836FCB82675E5AF00E2A0BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836FCB72675E5AF00E2A0BE /* AppDelegate.swift */; };
 		9836FCBA2675E5AF00E2A0BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836FCB92675E5AF00E2A0BE /* SceneDelegate.swift */; };
 		9836FCBC2675E5AF00E2A0BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836FCBB2675E5AF00E2A0BE /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9810CFAB2680D6B2005B0CCF /* ViewControllerthree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerthree.swift; sourceTree = "<group>"; };
 		9836FCB42675E5AF00E2A0BE /* Module6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Module6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9836FCB72675E5AF00E2A0BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9836FCB92675E5AF00E2A0BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				9836FCB92675E5AF00E2A0BE /* SceneDelegate.swift */,
 				9836FCBB2675E5AF00E2A0BE /* ViewController.swift */,
 				9836FCCF267EF7AF00E2A0BE /* ViewControllerEnum.swift */,
+				9810CFAB2680D6B2005B0CCF /* ViewControllerthree.swift */,
 				9836FCBD2675E5AF00E2A0BE /* Main.storyboard */,
 				9836FCC02675E5B100E2A0BE /* Assets.xcassets */,
 				9836FCC22675E5B100E2A0BE /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9836FCBC2675E5AF00E2A0BE /* ViewController.swift in Sources */,
+				9810CFAC2680D6B2005B0CCF /* ViewControllerthree.swift in Sources */,
 				9836FCB82675E5AF00E2A0BE /* AppDelegate.swift in Sources */,
 				9836FCBA2675E5AF00E2A0BE /* SceneDelegate.swift in Sources */,
 				9836FCD0267EF7AF00E2A0BE /* ViewControllerEnum.swift in Sources */,
