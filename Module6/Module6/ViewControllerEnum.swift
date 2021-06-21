@@ -196,9 +196,127 @@ extension ViewControllerEnum : UITableViewDataSource {
         }
         
         
+        
     }
-    
     
     
 }
 
+/*
+ 
+ new functionality to an existing
+ 
+ 1) class
+ 2) Structure
+ 3) enumeration
+ 4) protocol
+ 
+ - adding computed instance properties and computed type properties
+ - Define instance methods and type methods
+ - provide new initializers
+ - Define subscript
+ - Define and use new nested types
+ - Make an existing type conform to a protcol
+ 
+ 
+ */
+
+
+typealias Gram = Int
+class Coffee {
+
+    var espresso : Gram
+    var milkform : Gram
+    var steamedmilk : Gram
+    var hotchocolate : Gram
+
+    init(espresso : Gram, milkform : Gram, steamedmilk : Gram, hotchocolate : Gram) {
+
+        self.espresso = espresso
+        self.milkform = milkform
+        self.steamedmilk = steamedmilk
+        self.hotchocolate = hotchocolate
+
+    }
+
+}
+
+
+extension Coffee{
+    
+    // computed instance property
+    var espressoPresent : Float{
+        let totalGram = self.espresso + self.milkform + self.steamedmilk + self.hotchocolate
+        return Float((self.espresso/totalGram) * 100)
+    }
+    
+    func brew(){
+        
+        if self.espresso == self.milkform &&
+            self.espresso == self.steamedmilk{
+            print("Here is your cappucino")
+        }else{
+            //...
+            // brew other coffee
+            print("Unknow Drink. Pleas contact your brista.")
+        }
+        
+    }
+    func makeCappucin0(){
+        let drink = Coffee(espresso: 30, milkform: 30, steamedmilk: 30, hotchocolate: 0)
+        drink.brew()
+        
+    }
+    
+}
+
+func showArrayCount(){
+    
+    let fruit = ["Apple","Orange","Banan","Limon","Pineapple","Sausage","Ginger"]
+    let _ = fruit.isEmpty // false
+    let _ = fruit.isnotEmpty() // true
+    
+    
+}
+
+extension Array{
+    func isnotEmpty() -> Bool{
+        return count > 0
+    }
+}
+
+
+
+
+enum DebugTag : String {
+    case info
+    case warning
+    case debug
+    case error
+    
+}
+
+// extension Protocol
+protocol DebugHelper {
+    func printWithTag(tag : DebugTag, message : String)
+}
+
+extension DebugHelper{
+    func printWithTag(tag : DebugTag , message : String){
+        print(" (\(tag.rawValue.uppercased()) : \(message)")
+    }
+    
+}
+
+
+class ViewControllerEnum1 : UIViewController, DebugHelper {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        printWithTag(tag: .error, message: " Something seems off ...")
+        printWithTag(tag: .debug, message: "Everything is ok")
+        
+    }
+    
+}
