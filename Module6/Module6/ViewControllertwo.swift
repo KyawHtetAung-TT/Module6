@@ -19,6 +19,12 @@ class ViewControllertwo: UIViewController {
     }
     
 
+    
+    
+//     memory က နေဖြတ်ရင် ခေါ်တာ
+    deinit {
+        print("viewcontrollertwo is gone!")
+    }
   
 
 }

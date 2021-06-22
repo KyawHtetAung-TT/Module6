@@ -393,7 +393,7 @@ let fruit = [
         }
         
         
-        
+        createShowVC2Button()
         
         // memory management
         // retain cycle - reference counting
@@ -404,18 +404,32 @@ let fruit = [
         
         
     
+    var referencetoViewControllertwo : GenericsViewController?
     
         @objc func onClickShowScreen(_ sender: UIButton){
             
             let vc = ViewControllertwo()
-            
+//            self.referencetoViewControllertwo = vc
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10){
+                self.referencetoViewControllertwo = nil
+                print("10 seconds passed. referencetoViewContrllertwo will set to nil")
+            }
+        
             self.present(vc, animated: true, completion: nil)
         }
         
         
         
         
+    func createShowVC2Button(){
+        let vc2 = UIButton()
+        vc2.setTitle("ShowVC2", for: .normal)
+        vc2.setTitleColor(.black, for: .normal)
+        view.addSubview(vc2)
+        vc2.translatesAutoresizingMaskIntoConstraints = false
         
+        vc2.addTarget(self, action: #selector(onClickShowScreen(_:)), for: .touchUpInside)
+    }
         
         
         
