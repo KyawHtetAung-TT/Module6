@@ -343,6 +343,59 @@ let fruit = [
         
         
         
+        // Synchronous vs Asynchronous
+        // Synchronous - step by step
+        calculation(fourmula: multiplicationFormula(a:b:))
+        
+        
+        // Asysnchronous
+        
+//        func executeAfter3Second(){
+//
+//            // This is a synchronous fuction
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3){ // execute this closure after 3 seconds
+//                print("Result after 3 seconds")
+//            }
+//        }
+//
+//        executeAfter3Second()
+//        print("this is a test")
+        
+        
+        // explicit capture - ???   must includ <self>
+        
+        
+        func executeAfter3Second(){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30){
+//            self.thisisFunction()
+            print("Result after 3 seconds")
+            }
+            
+        }
+        
+        executeAfter3Second()
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -354,3 +407,4 @@ let fruit = [
 
     }
 }
+
