@@ -249,28 +249,95 @@ class GenericsViewController: UIViewController {
         
         
         
-    
-    }
+
+
+// pratical Closure
+
+typealias CaloriePerKiloGram = Float
+struct Fruit{
+    let name : String
+    let pricePerKilo : Float
+    let energy : CaloriePerKiloGram
 }
 
+let fruit = [
+    Fruit(name: "apple", pricePerKilo: 1500, energy: 50),
+    Fruit(name: "banana", pricePerKilo: 500, energy: 100),
+    Fruit(name: "oragne", pricePerKilo: 2500, energy: 30),
+    Fruit(name: "strawberry", pricePerKilo: 1500, energy: 59),
+    Fruit(name: "tomatoe", pricePerKilo: 700, energy: 54),
+    Fruit(name: "pineapple", pricePerKilo: 3500, energy: 40),
+    Fruit(name: "easteregg", pricePerKilo: 2000, energy: 9),
+    Fruit(name: "lemon", pricePerKilo: 900, energy: 1),
+
+    ]
+
+    // filter - filter expensive fruits
+
+    fruit.filter({ (fruit)-> Bool in
+        return fruit.pricePerKilo > 5000
+    })
+    
+        
+    let expensiveFruits = fruit.filter{ $0.pricePerKilo > 5000 }
+        print(expensiveFruits.count)  // 2
 
 
+    // sort - sort fruits in best value order( i,e price/ energy ratio ) - how much for 2 calroies
+
+        
+        let bestValueFruit : [Fruit] = fruit.sorted{ ( fruit1, fruit2 ) -> Bool in
+            (fruit1.pricePerKilo / fruit1.energy) < (fruit2.pricePerKilo / fruit2.energy)
+        }
 
 
+        // for each - for loop, but better
+        
+        bestValueFruit.forEach{ print("\($0.name)")}
 
 
+    // map - for each, but transform the data and returns it
+    // protmotion - 10% discount to all items
+        
+        let promotionItmes : [Fruit] = bestValueFruit.map{
+            let retailPrice = $0.pricePerKilo * 0.9
+           return Fruit(name: $0.name, pricePerKilo: retailPrice, energy: $0.energy)
+            
+        }
+        promotionItmes.forEach({
+            print("\( $0.name) costs \($0.pricePerKilo)")
+        })
+        
+        
+        
+        
+    // reduce
+        
+        let allItemsAString = bestValueFruit.reduce("all item in fruits array") { resultLatestUpdatedValue, item in
+            return" \(resultLatestUpdatedValue):\(item.name)"
+        }
+        print(allItemsAString)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+}
