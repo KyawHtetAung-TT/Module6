@@ -320,13 +320,26 @@ let fruit = [
         
         
         
+    // Value Capture  အနားကဟာတေခေါ်သုံးလိုရ - a closure can caputure constants and variables from the surrounding content
+    // Implicit capture - self ထည့်မရေးလဲရ - Surrouding value တွေကို parameter  အနေနဲ  pass  လုပ်ပေးဖို့မလို - တစ်ခါတည်းခေါ်
+     
+        let outsideVariable = "This variable is out of function"
+        func outSideFucntion(){
+            print("This function is outside of clousre")
+        }
+        
+        calculation{(value1,value2) -> Int in
+            print(outsideVariable)
+            print(self)
+            outSideFucntion()
+            return value1 + value2
+            
+        }
         
         
         
         
-        
-        
-        
+        // Explicit caputure - ???
         
         
         
