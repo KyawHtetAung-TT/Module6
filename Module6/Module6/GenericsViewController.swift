@@ -12,10 +12,47 @@ class GenericsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        
+        
+        // closure
+        // function - Recap - keyword, parameters, return type / void
+        // basic function
 
-}
+        func doSomething(param : String) -> String?{
+            return ""
+        }
+
+
+        func doSomething2(){
+            
+        }
+
+
+        // input parameter ( declared value can be assigned )
+        // also changed in parent source
+
+        func doSomething3(param : inout String){
+            param = "value chagned"
+        }
+
+
+        var someValue : String = "This is value"
+        doSomething3(param: &someValue)
+        print(someValue)  // value changed
+
+        
+    // func is first class citizen - storing in data structure, can pass in as param, can assign
+    // function is stroed in data structure
+        
+    var functions = [() -> String] ()
+        func testFunction() -> String{
+            return " this si test function"
+        }
+        
+        functions.append(testFunction)
+        print(functions[0]())
+
+
 
 /*
  
@@ -106,25 +143,21 @@ class GenericsViewController1 : UIViewController{
         
         
         
+                }
+    
+        }
+
+
+
+
+
+
+        
+ 
+        
+        
+        
+        
+    
     }
-    
-    
-    
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
