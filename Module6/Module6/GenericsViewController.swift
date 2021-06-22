@@ -364,47 +364,86 @@ let fruit = [
         
         // explicit capture - ???   must includ <self>
         
-        
-        func executeAfter3Second(){
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 30){
-//            self.thisisFunction()
-            print("Result after 3 seconds")
-            }
-            
-        }
-        
-        executeAfter3Second()
+//
+//        func executeAfter3Second(){
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 30){
+////            self.thisisFunction()
+//            print("Result after 3 seconds")
+//            }
+//
+//        }
+//
+//        executeAfter3Second()
                 
         
+        // @escaping clousure - make the cloure escaped ( i, e asyschronous)
+        func executeAfter3Second(_ completion :@escaping () -> Void ){
+    
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                print("Result after 3 seconds")
+                completion()
+            }
+        }
+        
+        // this become as asyschronous fuction
+        executeAfter3Second {
+//            self.thisisfunction()
+            print("this is function is finally complete")
+        }
         
         
         
         
+        // memory management
+        // retain cycle - reference counting
+     
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-    }
 }
+        
+        
+    
+    
+        @objc func onClickShowScreen(_ sender: UIButton){
+            
+            let vc = ViewControllertwo()
+            
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+}
