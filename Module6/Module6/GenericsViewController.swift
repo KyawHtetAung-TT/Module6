@@ -52,7 +52,47 @@ class GenericsViewController: UIViewController {
         functions.append(testFunction)
         print(functions[0]())
 
-
+        
+    // pass function as parameter
+        func additionFormula( a : Int, b : Int) -> Int {
+             a + b //no need to type return
+        }
+        
+        func multiplicationFormula( a: Int, b : Int) -> Int{
+            return a * b
+        }
+        
+        func calculation(fourmula : ( Int, Int) -> Int) -> Int {
+            
+            let a = 10
+            let b = 20
+            return fourmula(a,b)
+            
+        }
+        
+        calculation(fourmula: additionFormula)
+        
+        
+        // assign funciton to variable
+        
+        let cal : (( Int, Int) -> Int) -> Int = calculation
+        print(cal(additionFormula))
+        
+        // function that returns fucntion
+        func randomFormula() -> ( Int, Int) -> Int{
+            let isTrue = Bool.random()
+            if isTrue{
+                return additionFormula(a:b:)
+            }else{
+                return multiplicationFormula(a:b:)
+            }
+        }
+        
+        print(calculation(fourmula: randomFormula()))
+        
+        
+        
+        
 
 /*
  
