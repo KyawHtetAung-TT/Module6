@@ -12,7 +12,8 @@ class ViewControllerEnum: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        morningCoffee1()
         
         // Do any additional setup after loading the view.
     }
@@ -223,12 +224,14 @@ extension ViewControllerEnum : UITableViewDataSource {
 
 
 typealias Gram = Int
-class Coffee {
+private class Coffee {
 
-    var espresso : Gram
-    var milkform : Gram
-    var steamedmilk : Gram
-    var hotchocolate : Gram
+    // declare with private and can't reassign and use this variable
+    
+     var espresso : Gram
+     var milkform : Gram
+     var steamedmilk : Gram
+     var hotchocolate : Gram
 
     init(espresso : Gram, milkform : Gram, steamedmilk : Gram, hotchocolate : Gram) {
 
@@ -262,13 +265,15 @@ extension Coffee{
         }
         
     }
-    func makeCappucin0(){
+    func makeCappucino(){
         let drink = Coffee(espresso: 30, milkform: 30, steamedmilk: 30, hotchocolate: 0)
-        drink.brew()
-        
+        drink.brew() //Here is your cappucino
     }
     
 }
+
+
+
 
 func showArrayCount(){
     
