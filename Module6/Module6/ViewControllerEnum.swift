@@ -32,8 +32,6 @@ class ViewControllerEnum: UIViewController {
 //        case value1
 //        case value2
 //        case value3
-//
-//
 //    }
 //
 //    func getIphone12SeriesPrices(variant :String) -> Int{
@@ -49,7 +47,6 @@ class ViewControllerEnum: UIViewController {
 //        default:
 //            return -1
 //        }
-//
 //
 //        func buy(){
 //
@@ -144,16 +141,10 @@ class ViewControllerEnum: UIViewController {
                 
             }
             
-            
-            
-            
     }
     }
         
 //MARK: - UITableViewDataSource
-        
-
-
 
 enum HomeScreenSectionType : Int {
     case popularMatch = 0
@@ -165,10 +156,7 @@ let HomeScreenItem : [HomeScreenSectionType] = [
     .popularMatch,
     .popularLeague,
     .sportCategories,
-    
 ]
-
-    
 
 extension ViewControllerEnum : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -191,20 +179,15 @@ extension ViewControllerEnum : UITableViewDataSource {
             let cellSportCategories = UITableViewCell()
             return cellSportCategories
             
-            
         default:
             return UITableViewCell()
         }
         
-        
-        
     }
-    
     
 }
 
 /*
- 
  new functionality to an existing
  
  1) class
@@ -218,10 +201,7 @@ extension ViewControllerEnum : UITableViewDataSource {
  - Define subscript
  - Define and use new nested types
  - Make an existing type conform to a protcol
- 
- 
  */
-
 
 typealias Gram = Int
 private class Coffee {
@@ -243,7 +223,6 @@ private class Coffee {
     }
 
 }
-
 
 extension Coffee{
     
@@ -272,16 +251,11 @@ extension Coffee{
     
 }
 
-
-
-
 func showArrayCount(){
     
     let fruit = ["Apple","Orange","Banan","Limon","Pineapple","Sausage","Ginger"]
     let _ = fruit.isEmpty // false
     let _ = fruit.isnotEmpty() // true
-    
-    
 }
 
 extension Array{
@@ -289,9 +263,6 @@ extension Array{
         return count > 0
     }
 }
-
-
-
 
 enum DebugTag : String {
     case info
@@ -306,16 +277,21 @@ protocol DebugHelper {
     func printWithTag(tag : DebugTag, message : String)
 }
 
+// no need to conform in view controller if you exten this
 extension DebugHelper{
     func printWithTag(tag : DebugTag , message : String){
         print(" (\(tag.rawValue.uppercased()) : \(message)")
     }
-    
+
 }
 
-
 class ViewControllerEnum1 : UIViewController, DebugHelper {
-    
+
+    // not necesary to conform
+
+    //    func printWithTag(tag: DebugTag, message: String) {
+//        <#code#>
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

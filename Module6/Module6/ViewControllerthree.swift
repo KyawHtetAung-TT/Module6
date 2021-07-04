@@ -14,25 +14,15 @@ class ViewControllerthree: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    
-    
-
 }
 
-
-
 /*
- 
  Error Handling
  ----
- 
  throwing
  catching
  propagating
- 
- 
+  
  
  types of error
  -----
@@ -45,9 +35,10 @@ class ViewControllerthree: UIViewController {
  
  let value : Int? = Int("Hello")  // nil
  
- So Many Way to Go Wrong
  
+ So Many Way to Go Wrong
  - debugging / error tracing / error handling
+ 
  
  if error {
  
@@ -66,9 +57,6 @@ class ViewControllerthree: UIViewController {
  // handle general error
  
  }
- 
- 
- 
  */
 
 func doAssignment(_ studentName : String) -> String{
@@ -77,7 +65,6 @@ func doAssignment(_ studentName : String) -> String{
     // ...
     
     return "done"
-
 }
 
 func checkAssignment(){
@@ -97,24 +84,18 @@ func checkAssignment(){
         print("unfinished")
         break;
         
-        
     default:
         print("show assignment")
         break;
     }
     
-    
 }
-
 /*
-
 // fetching a file form hard disk
-
 
 func getFileFormHardDisk(){
     
     let data1 = fetchFile("Wrong-path/sub-path/item")
-    
     
     // Scenerio - 1
     print(data1)    // wrong path
@@ -125,18 +106,15 @@ func getFileFormHardDisk(){
     // Scenerio - 3
     print(data1)    // permission denied
     
+ 
     if data != nil{
         // has data
     }else{
         // has no data
     }
     
-    
 }
-
 */
-
-
 
 // but in real, not string returns
 

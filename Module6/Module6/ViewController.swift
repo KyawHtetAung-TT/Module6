@@ -257,9 +257,9 @@ class ViewController: UIViewController {
 //
 //            // function
 //
-//
-//
 //        }
+        
+        
 //        let someObject = SomeCalssName()
 //
 //
@@ -305,7 +305,7 @@ class ViewController: UIViewController {
 //        let limejuice = Drink()
 //        limejuice.taste = "sour"
 //
-//        print(limejuice.taste!) // Optional("sour")   // force ! to remove Optional
+//        print(limejuice.taste!) // Optional("sour")   // force ! to remove Optional "sour"
 //        print(limejuice.isColdDrink) // nil
         
         
@@ -321,7 +321,7 @@ class ViewController: UIViewController {
 //        }
 //
 //        let limejuice = Drink(taste: "sour", isColdDrink: true)
-//        print(limejuice.taste) // sour
+//        print(limejuice.taste) // "sour"
 //        print(limejuice.isColdDrink) // true
         
         
@@ -381,6 +381,8 @@ class ViewController: UIViewController {
 //
 //            }
             
+        //designated
+        
 //            init(value : Gram) {
 //                self.espresso = value
 //                self.milkform = 0
@@ -388,11 +390,14 @@ class ViewController: UIViewController {
 //                self.hotchocolate = 0
 //
 //                super.init(taste: "bitter", isColdDrink: false, Bartender())
+        
+                    // super.init use parent class
 //            }
             
 //
 //            convenience init(amount : Gram){
 //                self.init(espresso : amount, milkform : 0, steamedmilk : amount, hotchocolate : 0)
+                    // self.init use own class
 //            }
 //
 //
@@ -532,29 +537,7 @@ class ViewController: UIViewController {
         
         
         // Initializing Objects - memberwise init, customized init
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+   
             }
             
         }

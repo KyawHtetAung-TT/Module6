@@ -9,13 +9,15 @@ import UIKit
 
 class GenericsViewController: UIViewController {
 
+    let outsideVariable = "This variable is out of function"
+    func outSideFucntion(){
+        print("This function is outside of clousre")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-   
         /*
-         
          Generic
          - fix code duplication
          - using any as "Generic"
@@ -25,9 +27,7 @@ class GenericsViewController: UIViewController {
          - generics can be used with class, struct, enum, protocol, function
          
          # Write specific code first, and generalize only when needed
-         
          */
-
 
         func sumTwoValueInt( a : Int, b : Int) -> Int {
             return a + b
@@ -51,9 +51,10 @@ class GenericsViewController: UIViewController {
             
         }
 
-
         // --- Refactor with Generic ---
-
+        // T ကိုခေါ်သုံးရင် T က value တစ်ခုရှိတယ်ဆိုတာလက်ခံထားတယ် ဘာ vlaue ဆိုတာတိတိကျကျမသိဘူးအဲ့ value ကို func ခေါ်သုံးတဲ့အချိန်ကျမ သတ်မှတ်ပေးတဲ့ပုံစံမျိုးဖြစ်လိမ်မယ်
+        // T ကို additiveArithmetic မသတ်မှတ်ထားရင် T နေရာမာအကုန်ဖြစ်နိင်သွားတယ် eg : String, Int, Double,struct, enum, clousre, array, dictionary...
+        // additiveArithmetic သည် confrom လုပ်ထားသော Type တေအကုန်လုံးကိုလက်ခံပါတယ်ဆိုပီးရေးပေးလိုက်တာ
         func  sumValue<T : AdditiveArithmetic>( a : T, b : T) -> T {
             return a + b
         }
@@ -102,15 +103,10 @@ class GenericsViewController: UIViewController {
                 print(type(of: flipCoin)) // Array<CoinFace>
                 
                 
-                
         }
             
     }
 
-
-        
-        
-    
         // closure
         // function - Recap - keyword, parameters, return type / void
         // basic function
@@ -118,7 +114,6 @@ class GenericsViewController: UIViewController {
         func doSomething(param : String) -> String?{
             return ""
         }
-
 
         func doSomething2(){
             
@@ -169,8 +164,6 @@ class GenericsViewController: UIViewController {
         
         calculation(fourmula: additionFormula)
         
-        
-        
         // assign funciton to variable
         
         let cal : (( Int, Int) -> Int) -> Int = calculation
@@ -190,7 +183,6 @@ class GenericsViewController: UIViewController {
         
         
 // p26 how to read a function in a documentation - UIButton
-        
         
     
     // Closure
@@ -246,10 +238,6 @@ class GenericsViewController: UIViewController {
         // shorthand - no return keyword ( fucntion )
         
         print(calculation { (( $0 * $1) + $1) - $0  })
-        
-        
-        
-
 
 // pratical Closure
 
@@ -259,7 +247,8 @@ struct Fruit{
     let pricePerKilo : Float
     let energy : CaloriePerKiloGram
 }
-
+// let fruit : [Fruit] = [  ]
+        
 let fruit = [
     Fruit(name: "apple", pricePerKilo: 1500, energy: 50),
     Fruit(name: "banana", pricePerKilo: 500, energy: 100),
@@ -309,11 +298,10 @@ let fruit = [
         })
         
         
-        
-        
     // reduce
         
-        let allItemsAString = bestValueFruit.reduce("all item in fruits array") { resultLatestUpdatedValue, item in
+        let allItemsAString = bestValueFruit.reduce("all item in fruits array")
+        { (resultLatestUpdatedValue, item) -> String in
             return" \(resultLatestUpdatedValue):\(item.name)"
         }
         print(allItemsAString)
@@ -321,29 +309,31 @@ let fruit = [
         
         
     // Value Capture  အနားကဟာတေခေါ်သုံးလိုရ - a closure can caputure constants and variables from the surrounding content
+    //  self ကို ထည့်လဲရ မထည့်လဲရတယ်
     // Implicit capture - self ထည့်မရေးလဲရ - Surrouding value တွေကို parameter  အနေနဲ  pass  လုပ်ပေးဖို့မလို - တစ်ခါတည်းခေါ်
      
-        let outsideVariable = "This variable is out of function"
-        func outSideFucntion(){
-            print("This function is outside of clousre")
-        }
+//        let outsideVariable = "This variable is out of function"
+//        func outSideFucntion(){
+//            print("This function is outside of clousre")
+//        }
         
         calculation{(value1,value2) -> Int in
+            //self
+//            print(self.outsideVariable)
             print(outsideVariable)
             print(self)
+//            self.outSideFucntion()
             outSideFucntion()
             return value1 + value2
             
         }
         
         
-        
-        
         // Explicit caputure - ???
-        
-        
+        // self ကိုမဖြစ်မနေထည့်ပေးရမာ
         
         // Synchronous vs Asynchronous
+        
         // Synchronous - step by step
         calculation(fourmula: multiplicationFormula(a:b:))
         
@@ -392,17 +382,12 @@ let fruit = [
             print("this is function is finally complete")
         }
         
-        
         createShowVC2Button()
         
         // memory management
         // retain cycle - reference counting
      
-        
-        
 }
-        
-        
     
     var referencetoViewControllertwo : GenericsViewController?
     
@@ -418,9 +403,8 @@ let fruit = [
             self.present(vc, animated: true, completion: nil)
         }
         
-        
-        
-        
+    
+    
     func createShowVC2Button(){
         let vc2 = UIButton()
         vc2.setTitle("ShowVC2", for: .normal)
@@ -430,32 +414,19 @@ let fruit = [
         
         vc2.addTarget(self, action: #selector(onClickShowScreen(_:)), for: .touchUpInside)
     }
-        
-        
-        
-        
-        
-        
-        
-     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     
 }
+
+
+
+
+//func wildFunction() -> String{
+//    print(self)
+//    return " This is function dont have a class"
+//}
+
+
+
+
+
+

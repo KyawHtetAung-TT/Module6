@@ -17,18 +17,13 @@ class ViewControllertwo: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        
-        
-        
-        
-    // weak, unowned, strong ??
+        // weak, unowned, strong ??
 
         
         // Strong
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 10){
 //            print(" object.count => \(self.objects.count)")
 //        }
-        
         
         // Weak
         DispatchQueue.main.asyncAfter(deadline: .now() + 10 ) { [weak self] in
@@ -37,29 +32,22 @@ class ViewControllertwo: UIViewController {
                 return
             }
           print(" object.count => \(self?.objects.count ?? 0 )")
+//        print(" object.count => \(this.objects.count ?? 0 )")
+
         }
-        
         
         // owned
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 10 ) { [unowned self] in
 //            print(" object.count => \(self.objects.count)")
 //        }
         
-        
-        
-        
-       
     }
-    
-
-    
     
 //     memory က နေဖြတ်ရင် ခေါ်တာ
     deinit {
         print("viewcontrollertwo is gone!")
     }
   
-    
 
 }
 

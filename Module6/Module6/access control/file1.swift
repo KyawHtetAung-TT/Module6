@@ -18,7 +18,7 @@ class Coffee1 {
     // without declaring is internal
     // open and public are module level access control
     
-   fileprivate var espresso1 : Gram1
+    fileprivate var espresso1 : Gram1
     private var milkform1 : Gram1
     private var steamedmilk1 : Gram1
     private var hotchocolate1 : Gram1
